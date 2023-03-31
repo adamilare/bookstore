@@ -170,7 +170,8 @@ body {
   opacity: 0.5;
 }
 
-.current-progress button {
+.current-progress button,
+.check-status {
   cursor: pointer;
   border: none;
   background-color: var(--primary-color);
