@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  width: 100%;
+}
+
+.nav-left {
+  display: flex;
+  width: 50%;
+  justify-content: flex-start;
+}
+
+.nav-right {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar span {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: rgb(107, 100, 100);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.active {
+  color: red;
+  font-size: 30px;
+}
