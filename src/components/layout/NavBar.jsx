@@ -1,15 +1,15 @@
 import { NavLink } from 'react-router-dom';
-import styles from '../../css/NavBar.module.css';
+import { FaUserAlt } from 'react-icons/fa';
 
 const NavBar = () => (
-  <div className={`clas ${styles.navbar}`}>
-    <span className={styles['nav-left']}>Bookstore CMS</span>
-    <div className={styles['nav-right']}>
+  <div className="navbar">
+    <span className="nav-brand">Bookstore CMS</span>
+    <div className="nav-links">
       <NavLink to="/">BOOKS</NavLink>
       <NavLink to="/categories">CATEGORIES</NavLink>
     </div>
-    <button type="button">
-      <span>O</span>
+    <button type="button" className="nav-user">
+      <FaUserAlt />
     </button>
   </div>
 );

@@ -28,7 +28,7 @@ const Books = () => {
   };
 
   return (
-    <>
+    <div className="books-container">
       <div className="books">
         {collections.map((book) => (
           <Book
@@ -39,8 +39,9 @@ const Books = () => {
           />
         ))}
       </div>
+      <hr />
       <AddBook />
-    </>
+    </div>
   );
 };
 
