@@ -7,13 +7,13 @@ const initialState = {
 
 const checkStatusReducer = (state) => {
   if (state.categories && state.categories.lenght < 1) {
-    state.categories.status = 'Under construction';
+    state.categories.status = 'Under construction'; // eslint-disable-line
   }
 };
 
 const categoriesSlice = createSlice({
   name: 'categories',
-  initialState: [],
+  initialState,
   reducers: {
     checkStatus: checkStatusReducer,
   },

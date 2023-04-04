@@ -25,7 +25,7 @@ const addBookReducer = (state, { payload }) => {
 };
 
 const removeBookReducer = (state, { id }) => {
-  state.books = state.books.filter((book) => book.item_id !== id);
+  state.books = state.books.filter((book) => book.item_id !== id); // eslint-disable-line
 };
 
 const booksSlice = createSlice({
