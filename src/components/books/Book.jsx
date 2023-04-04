@@ -3,9 +3,9 @@ import BookInfo from './BookInfo';
 import Progress from './Progress';
 import ProgressCurrent from './ProgressCurrent';
 
-const Book = ({ book, percent, handleOperations }) => (
+const Book = ({ book, percent }) => (
   <div className="book-row">
-    <BookInfo book={book} handleOperations={handleOperations} />
+    <BookInfo book={book} />
     <div className="book-right">
       <Progress percent={percent} />
       <hr />
@@ -23,7 +23,6 @@ Book.propTypes = {
     chapters: PropTypes.number.isRequired,
   }).isRequired,
   percent: PropTypes.number.isRequired,
-  handleOperations: PropTypes.func.isRequired,
 };
 
 export default Book;
