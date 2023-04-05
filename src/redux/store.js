@@ -5,6 +5,6 @@ import categoriesReducer from './categories/categoriesSlice';
 export default configureStore({
   reducer: {
     books: booksReducer,
-    categoriesSlice: categoriesReducer,
+    categories: categoriesReducer,
   },
 });

@@ -2,14 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   categories: [],
-  status: 'Under construction',
+  status: '',
 };
 
-const checkStatusReducer = (state) => {
-  if (state.categories && state.categories.lenght < 1) {
-    state.categories.status = 'Under construction'; // eslint-disable-line
-  }
-};
+const checkStatusReducer = (state) => ({
+  ...state,
+  status: 'Under construction',
+});
 
 const categoriesSlice = createSlice({
   name: 'categories',

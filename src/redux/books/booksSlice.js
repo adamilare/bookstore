@@ -21,6 +21,7 @@ const initialState = {
       category: 'Nonfiction',
     },
   ],
+  another: 1,
 };
 
 const makeBookId = ({ books }) => {
@@ -44,7 +45,8 @@ const addBookReducer = (state, { payload }) => {
 };
 
 const removeBookReducer = (state, { payload: id }) => {
-  state.books = state.books.filter((book) => book.item_id !== id); // eslint-disable-line
+  const filterBooks = state.books.filter((book) => book.item_id !== id);
+  return { ...state, books: filterBooks };
 };
 
 const booksSlice = createSlice({
