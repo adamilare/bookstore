@@ -1,11 +1,9 @@
-/* eslint-disable */
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../../redux/books/booksSlice';
 
 const Bookops = ({ bookId }) => {
   const dispatch = useDispatch();
-  console.log('bookId', bookId);
 
   return (
     <div className="book-actions">
