@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
-import Books from './routes/Books';
+import Books from './routes/BookList';
 import Categories from './routes/Categories';
 
 function App() {

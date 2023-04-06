@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { addBook } from '../../redux/books/booksSlice';
+import { addBook, getBooks } from '../../redux/books/bookThunk';
+import Book from '../../models/Book.model';
 
 const selectOption = ['Action', 'Biography', 'History', 'Kids'];
 
@@ -19,11 +20,12 @@ const AddBook = () => {
       return;
     }
 
-    // Clear form fields and error message
     e.target.reset();
     setError('');
 
-    dispatch(addBook(bookData));
+    const newBookData = new Book('', title, author, category);
+
+    dispatch(addBook(newBookData)).then(() => dispatch(getBooks()));
   };
 
   return (

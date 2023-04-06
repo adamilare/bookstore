@@ -1,27 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { getBooks, addBook, removeBook } from './bookThunk';
 
 const initialState = {
-  books: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
-  another: 1,
+  books: [],
+  loading: false,
+  error: null,
 };
 
 const makeBookId = ({ books }) => {
@@ -52,12 +35,43 @@ const removeBookReducer = (state, { payload: id }) => {
 const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    addBook: addBookReducer,
-    removeBook: removeBookReducer,
+  extraReducers: (builder) => {
+    builder
+      .addCase(getBooks.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getBooks.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.error = null;
+        state.books = payload;
+      })
+      .addCase(getBooks.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      })
+      .addCase(addBook.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(addBook.fulfilled, (state) => {
+        state.loading = false;
+        state.error = null;
+      })
+      .addCase(addBook.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      })
+      .addCase(removeBook.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(removeBook.fulfilled, (state) => {
+        state.loading = false;
+        state.error = null;
+      })
+      .addCase(removeBook.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      });
   },
 });
-
-export const { addBook, removeBook } = booksSlice.actions;
 
 export default booksSlice.reducer;
