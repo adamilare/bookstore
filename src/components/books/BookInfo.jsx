@@ -8,13 +8,13 @@ const BookInfo = ({ book }) => (
       <div className="book-title">{book.title}</div>
       <div className="book-author">{book.author}</div>
     </div>
-    <Bookops bookId={book.item_id} />
+    <Bookops bookId={book.id} />
   </div>
 );
 
 BookInfo.propTypes = {
   book: PropTypes.shape({
-    item_id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,

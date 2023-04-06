@@ -1,20 +1,20 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../../redux/books/booksSlice';
+import { getBooks, removeBook } from '../../redux/books/bookThunk';
 
 const Bookops = ({ bookId }) => {
   const dispatch = useDispatch();
+
+  const handleDelete = () => {
+    dispatch(removeBook(bookId)).then(() => dispatch(getBooks()));
+  };
 
   return (
     <div className="book-actions">
       <button type="button" className="btn btn-comment">
         Commnet
       </button>
-      <button
-        type="button"
-        onClick={() => dispatch(removeBook(bookId))}
-        className="btn btn-remove"
-      >
+      <button type="button" onClick={handleDelete} className="btn btn-remove">
         Remove
       </button>
       <button type="button" className="btn btn-edit">
