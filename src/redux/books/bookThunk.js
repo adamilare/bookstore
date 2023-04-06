@@ -48,7 +48,7 @@ const removeBook = createAsyncThunk(
   'books/removeBook',
   async (bookId, { fulfillWithValue, rejectWithValue }) => {
     try {
-      const { data } = await axios.delete(`${baseUrl}books/${bookId}`, {
+      await axios.delete(`${baseUrl}books/${bookId}`, {
         item_id: bookId,
       });
       return fulfillWithValue(bookId);
