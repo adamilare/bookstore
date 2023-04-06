@@ -31,11 +31,7 @@ BOOKSTORE - A simple bookstore built with React and Redux.
 
 ## 🛠 Screenshots <a name="screenshots"></a>
 
-N/A
-
-<!-- <img src="./src/assets/screenshor-desktop.JPG" width="70%" alt="desktop screen" /> -->
-<!-- <img src="./src/assets/mobile.png" width="20%" alt="mobile screen" />
- -->
+<img src="./src/img/screenshot_desktop.JPG" width="70%" alt="desktop screen" />
 
 ## 🛠 Built With <a name="built-with"></a>
 
