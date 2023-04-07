@@ -279,6 +279,10 @@ body {
   opacity: 1 !important;
 }
 
+.error {
+  color: red;
+}
+
 @media (min-width: 768px) {
   #root {
     margin: 4%;
